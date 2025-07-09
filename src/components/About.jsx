@@ -1,4 +1,5 @@
 import { FaGithub, FaDownload, FaLinkedin } from 'react-icons/fa';
+import Cv from "../assets/Cv.pdf";
 
 
 export default function About() {
@@ -57,7 +58,7 @@ export default function About() {
               {/* Download CV Button */}
               <div>
                 <a
-                  href={Cv.pdf}
+                  href="/Cv.pdf"
                   download
                   className="btn btn-outline-success"
                 >

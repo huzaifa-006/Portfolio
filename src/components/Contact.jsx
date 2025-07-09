@@ -76,11 +76,10 @@ export default function Contact() {
               )}
             </div>
           </div>
-{/* Right - Contact Info & Location (combined) */}
+{/* Right - Contact Info */}
 <div className="col-md-5">
-  {/* Reach Me Directly */}
   <div
-    className="p-4 rounded-4 shadow-lg mb-4"
+    className="p-4 rounded-4 shadow-lg"
     style={{
       backdropFilter: "blur(12px)",
       background: "rgba(255, 255, 255, 0.05)",
@@ -89,6 +88,7 @@ export default function Contact() {
   >
     <h5 className="text-info mb-4">Reach Me Directly</h5>
 
+    {/* Email */}
     <div className="mb-3 d-flex align-items-center">
       <FaEnvelope className="me-3 text-info fs-4" />
       <a
@@ -99,6 +99,7 @@ export default function Contact() {
       </a>
     </div>
 
+    {/* Phone */}
     <div className="mb-3 d-flex align-items-center">
       <FaPhoneAlt className="me-3 text-info fs-5" />
       <a
@@ -109,6 +110,7 @@ export default function Contact() {
       </a>
     </div>
 
+    {/* LinkedIn */}
     <div className="mb-3 d-flex align-items-center">
       <FaLinkedin className="me-3 text-info fs-4" />
       <a
@@ -121,8 +123,9 @@ export default function Contact() {
       </a>
     </div>
   </div>
-
-  {/* Location */}
+</div>
+{/* Location*/}
+<div className="col-md-5">
   <div
     className="p-4 rounded-4 shadow-lg"
     style={{
@@ -132,16 +135,16 @@ export default function Contact() {
     }}
   >
     <h5 className="text-info mb-4">Location</h5>
+    {/* Location */}
     <div className="mb-3 d-flex align-items-center">
       <FaLocationArrow className="me-3 text-info fs-4" />
-      <span className="fs-6 text-light">Rawalpindi, Pakistan</span>
+        <span>Rawalpindi, Pakistan</span>
     </div>
   </div>
 </div>
-
-
+</div>
         </div>
-      </div>
+      
     </section>
   );
 }
