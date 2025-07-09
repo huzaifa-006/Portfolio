@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="container-fluid d-flex justify-content-between align-items-center w-100">
         {/* Left logo or name */}
         <a className="navbar-brand fw-bold" href="#">
-          Huzaifa Shafiq
+          M. Huzaifa Shafiq
         </a>
 
         {/* Centered navigation */}
