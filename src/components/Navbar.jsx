@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -94,6 +94,14 @@ export default function Navbar() {
             className="nav-icon"
           >
             <FaLinkedin />
+          </a>
+          <a
+            href="mailto:huzaifashafiq2024@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-icon"
+          >
+            <FaEnvelope />
           </a>
         </div>
       </div>

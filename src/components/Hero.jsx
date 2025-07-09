@@ -19,7 +19,7 @@ export default function Hero() {
           {/* Name pops down first */}
           <motion.h1
             className="display-3 fw-bold"
-            style={{ color: "#00ffaa", fontFamily: "cursive" }}
+            style={{ color: "#00ffaa", fontFamily: "times-new-roman" }}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}

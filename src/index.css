@@ -147,3 +147,25 @@ a {
   color: #00ffe7;
   text-shadow: 0 0 6px #00ffe7, 0 0 12px #00ffe7;
 }
+.skill-bar {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #00ffaa, #00f0ff);
+  width: 0%;
+  transition: width 1.5s ease-in-out;
+}
+.skill-percentage {
+  font-size: 0.9rem;
+  color: #00ffaa;
+}
+.colorful-bg {
+  background: radial-gradient(circle at top left, #1a1a2e, #1f4068, #16213e);
+}
+#expertise {
+  background: linear-gradient(to right top, #1b1c2e, #0a0c23);
+}
