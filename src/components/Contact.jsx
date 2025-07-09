@@ -77,8 +77,7 @@ export default function Contact() {
             </div>
           </div>
 {/* Right - Contact Info */}
-<div className="col-md-5">
-  {/* Contact Info Card */}
+<div className="col-12 col-md-5">
   <div
     className="p-4 rounded-4 shadow-lg mb-4"
     style={{
@@ -87,11 +86,11 @@ export default function Contact() {
       border: "1px solid rgba(255, 255, 255, 0.15)",
     }}
   >
-    <h5 className="text-info mb-4">Reach Me Directly</h5>
+    <h5 className="text-info mb-4 text-center text-md-start">Reach Me Directly</h5>
 
     {/* Email */}
-    <div className="mb-3 d-flex align-items-center">
-      <FaEnvelope className="me-3 text-info fs-4" />
+    <div className="mb-3 d-flex flex-column flex-md-row align-items-start align-items-md-center">
+      <FaEnvelope className="me-md-3 mb-2 mb-md-0 text-info fs-4" />
       <a
         href="mailto:huzaifashafiq2024@gmail.com"
         className="fs-6 text-decoration-none text-light"
@@ -101,8 +100,8 @@ export default function Contact() {
     </div>
 
     {/* Phone */}
-    <div className="mb-3 d-flex align-items-center">
-      <FaPhoneAlt className="me-3 text-info fs-5" />
+    <div className="mb-3 d-flex flex-column flex-md-row align-items-start align-items-md-center">
+      <FaPhoneAlt className="me-md-3 mb-2 mb-md-0 text-info fs-5" />
       <a
         href="tel:+923346971121"
         className="fs-6 text-decoration-none text-light"
@@ -112,8 +111,8 @@ export default function Contact() {
     </div>
 
     {/* LinkedIn */}
-    <div className="mb-3 d-flex align-items-center">
-      <FaLinkedin className="me-3 text-info fs-4" />
+    <div className="mb-3 d-flex flex-column flex-md-row align-items-start align-items-md-center">
+      <FaLinkedin className="me-md-3 mb-2 mb-md-0 text-info fs-4" />
       <a
         href="https://www.linkedin.com/in/muhammad-huzaifa-shafiq-b4089b232/"
         className="fs-6 text-decoration-none text-light"
@@ -125,7 +124,7 @@ export default function Contact() {
     </div>
   </div>
 
-  {/* Location Card */}
+  {/* Location Section */}
   <div
     className="p-4 rounded-4 shadow-lg"
     style={{
@@ -134,7 +133,7 @@ export default function Contact() {
       border: "1px solid rgba(255, 255, 255, 0.15)",
     }}
   >
-    <h5 className="text-info mb-4">Location</h5>
+    <h5 className="text-info mb-4 text-center text-md-start">Location</h5>
     <div className="mb-3 d-flex align-items-center">
       <FaLocationArrow className="me-3 text-info fs-4" />
       <span>Rawalpindi, Pakistan</span>
@@ -143,7 +142,9 @@ export default function Contact() {
 </div>
 
 </div>
-        </div>
+
+</div>
+        
       
     </section>
   );
