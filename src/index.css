@@ -169,3 +169,20 @@ a {
 #expertise {
   background: linear-gradient(to right top, #1b1c2e, #0a0c23);
 }
+/* Navbar link spacing */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+/* Social icons alignment on mobile */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .nav-icon {
+    font-size: 1.25rem;
+  }
+}
