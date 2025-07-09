@@ -1,5 +1,5 @@
 import { FaGithub, FaDownload, FaLinkedin } from 'react-icons/fa';
-import resume from '../assets/Cv.pdf'; // Ensure your resume is placed in src/assets
+
 
 export default function About() {
   return (
@@ -57,7 +57,7 @@ export default function About() {
               {/* Download CV Button */}
               <div>
                 <a
-                  href={resume}
+                  href={Cv.pdf}
                   download
                   className="btn btn-outline-success"
                 >
