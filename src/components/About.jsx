@@ -1,6 +1,4 @@
-import { FaGithub, FaDownload, FaLinkedin } from 'react-icons/fa';
-import Cv from "../assets/Cv.pdf";
-
+import { FaGithub, FaDownload, FaLinkedin } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -12,7 +10,12 @@ export default function About() {
         <div className="row justify-content-center">
           <div className="col-md-10">
             <p className="fs-5">
-              I'm a Computer Science graduate with a strong passion for building responsive web applications and intelligent software systems. I’ve worked on a variety of impactful projects including a Hate Speech Recognition System, E-Commerce Website, and University Management System. My expertise lies in React.js, Django, Flask, Java, and more.
+              I'm a Computer Science graduate with a strong passion for building
+              responsive web applications and intelligent software systems. I’ve
+              worked on a variety of impactful projects including a Hate Speech
+              Recognition System, E-Commerce Website, and University Management
+              System. My expertise lies in React.js, Django, Flask, Java, and
+              more.
             </p>
           </div>
         </div>
@@ -24,9 +27,9 @@ export default function About() {
             <div
               className="p-4 rounded-4 shadow-lg text-center h-100 d-flex flex-column justify-content-between"
               style={{
-                backdropFilter: 'blur(12px)',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
+                backdropFilter: "blur(12px)",
+                background: "rgba(255, 255, 255, 0.05)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
               }}
             >
               <div>
@@ -60,7 +63,7 @@ export default function About() {
                 <a
                   href="/Cv.pdf"
                   download
-                  className="btn btn-outline-success"
+                  className="btn btn-outline-info me-2 mb-2"
                 >
                   <FaDownload className="me-2" />
                   Download CV
@@ -74,14 +77,15 @@ export default function About() {
             <div
               className="p-4 rounded-4 shadow-lg text-center h-100"
               style={{
-                backdropFilter: 'blur(8px)',
-                background: 'rgba(0, 0, 0, 0.3)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
+                backdropFilter: "blur(8px)",
+                background: "rgba(0, 0, 0, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
               }}
             >
               <h5 className="text-info mb-2">Experience</h5>
               <p className="fs-5 mb-0 text-light">
-                2+ years of experience in developing modern websites and intelligent software systems using AI, React, Django, and more.
+                2+ years of experience in developing modern websites and
+                intelligent software systems using AI, React, Django, and more.
               </p>
             </div>
           </div>
