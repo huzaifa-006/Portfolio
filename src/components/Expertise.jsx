@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCode, FaServer, FaCloud, FaTools } from "react-icons/fa";
 
 const skillGroups = [
   {
     category: "Frontend",
-    icon: <FaCode size={30} color="#0ef" />,
+    icon: <span className="icon-pulse"><FaCode size={30} color="#0ef" /></span>,
     skills: [
       { name: "React.js", level: 85 },
       { name: "JavaScript", level: 85 },
@@ -16,7 +16,7 @@ const skillGroups = [
   },
   {
     category: "Backend",
-    icon: <FaServer size={30} color="#ff00ff" />,
+    icon: <span className="icon-pulse"><FaServer size={30} color="#ff00ff" /></span>,
     skills: [
       { name: "Node.js", level: 75 },
       { name: "Express.js", level: 65 },
@@ -27,7 +27,7 @@ const skillGroups = [
   },
   {
     category: "Cloud & Databases",
-    icon: <FaCloud size={30} color="#00f2ff" />,
+    icon: <span className="icon-pulse"><FaCloud size={30} color="#00f2ff" /></span>,
     skills: [
       { name: "SQL / PostgreSQL", level: 75 },
       { name: "MongoDB", level: 90 },
@@ -37,7 +37,7 @@ const skillGroups = [
   },
   {
     category: "Languages",
-    icon: <FaTools size={30} color="#ffa500" />,
+    icon: <span className="icon-pulse"><FaTools size={30} color="#ffa500" /></span>,
     skills: [
       { name: "C++", level: 80 },
       { name: "Java (Android)", level: 75 },
@@ -61,6 +61,53 @@ const courseraLogo = "https://upload.wikimedia.org/wikipedia/commons/7/7e/Course
 const courseraLogoDataUri =
   "data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='18' fill='%23006EFF'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='white' font-size='14' font-family='Arial' dy='.3em'%3EC%3C/text%3E%3C/svg%3E";
 
+// Animated Counter Hook
+function useCountUp(target, duration = 1200) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+    let raf;
+    function animate() {
+      start += step;
+      if (start >= target) {
+        setCount(target);
+      } else {
+        setCount(start);
+        raf = requestAnimationFrame(animate);
+      }
+    }
+    animate();
+    return () => raf && cancelAnimationFrame(raf);
+  }, [target, duration]);
+  return count;
+}
+
+// Smooth animated counter hook with trigger
+function useSmoothCountUp(target, duration = 1200, trigger = true) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!trigger) return;
+    let start = 0;
+    let startTime = null;
+    let raf;
+    function animate(ts) {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const value = Math.floor(progress * target);
+      setCount(value);
+      if (progress < 1) {
+        raf = requestAnimationFrame(animate);
+      } else {
+        setCount(target);
+      }
+    }
+    raf = requestAnimationFrame(animate);
+    return () => raf && cancelAnimationFrame(raf);
+  }, [target, duration, trigger]);
+  return count;
+}
+
 export default function Expertise() {
   const [hovered, setHovered] = useState(null);
   const [refreshKey, setRefreshKey] = useState({});
@@ -70,15 +117,79 @@ export default function Expertise() {
     setRefreshKey((prev) => ({ ...prev, [index]: Date.now() }));
   };
 
+  // Reveal on scroll
+  const [revealed, setRevealed] = useState(false);
+  const statsRef = useRef(null);
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setRevealed(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    if (statsRef.current) observer.observe(statsRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Hover state for each stat
+  const [hoveredStat, setHoveredStat] = useState(null);
+  const years = useSmoothCountUp(2, 400, revealed || hoveredStat === 'years');
+  const projects = useSmoothCountUp(12, 600, revealed || hoveredStat === 'projects');
+  const certs = useSmoothCountUp(6, 500, revealed || hoveredStat === 'certs');
+  const techs = useSmoothCountUp(18, 700, revealed || hoveredStat === 'techs');
+ 
   return (
     <section id="expertise" className="text-center text-light py-5">
+      {/* Animated Stats Bar */}
+      <div className="container mb-5 d-flex justify-content-center align-items-center" ref={statsRef} style={{ minHeight: 120 }}>
+        <div className="row justify-content-center g-4 w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+          <div className="col-6 col-md-3">
+            <div className="glass-card p-3 shadow-sm" style={{ borderRadius: '2rem' }}
+              onMouseEnter={() => setHoveredStat('years')}
+              onMouseLeave={() => setHoveredStat(null)}>
+              <div className="fs-2 fw-bold text-info">{years}+</div>
+              <div className="small text-light">Years Experience</div>
+            </div>
+          </div>
+          <div className="col-6 col-md-3">
+            <div className="glass-card p-3 shadow-sm" style={{ borderRadius: '2rem' }}
+              onMouseEnter={() => setHoveredStat('projects')}
+              onMouseLeave={() => setHoveredStat(null)}>
+              <div className="fs-2 fw-bold text-info">{projects}+</div>
+              <div className="small text-light">Projects</div>
+            </div>
+          </div>
+          <div className="col-6 col-md-3">
+            <div className="glass-card p-3 shadow-sm" style={{ borderRadius: '2rem' }}
+              onMouseEnter={() => setHoveredStat('certs')}
+              onMouseLeave={() => setHoveredStat(null)}>
+              <div className="fs-2 fw-bold text-info">{certs}+</div>
+              <div className="small text-light">Certifications</div>
+            </div>
+          </div>
+          <div className="col-6 col-md-3">
+            <div className="glass-card p-3 shadow-sm" style={{ borderRadius: '2rem' }}
+              onMouseEnter={() => setHoveredStat('techs')}
+              onMouseLeave={() => setHoveredStat(null)}>
+              <div className="fs-2 fw-bold text-info">{techs}+</div>
+              <div className="small text-light">Technologies</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container">
-        <h2 className="text-info mb-5">My Skillset</h2>
+        <motion.h2
+          className="text-info mb-5"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+        >
+          My Skillset
+        </motion.h2>
         <div className="row justify-content-center g-4">
           {skillGroups.map((group, gIdx) => (
-            <div key={gIdx} className="col-md-6 col-lg-3 d-flex">
+            <div key={gIdx} className="col-md-6 col-lg-3 d-flex section-fade-in">
               <div
-                className="bg-dark p-4 rounded-4 shadow-lg w-100 d-flex flex-column justify-content-between"
+                className="glass-card p-4 rounded-4 shadow-lg w-100 d-flex flex-column justify-content-between"
                 style={{ minHeight: "100%" }}
               >
                 <div className="mb-2">{group.icon}</div>
@@ -116,7 +227,7 @@ export default function Expertise() {
                           className="progress-bar"
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.level}%` }}
-                          transition={{ duration: 0.2 }}
+                          transition={{ duration: 0.04 }}
                           key={refreshKey[index]}
                           style={{
                             height: "100%",
@@ -136,7 +247,16 @@ export default function Expertise() {
       </div>
       {/* Certifications & Awards Section */}
       <div className="container mt-5">
-        <h3 className="text-info mb-4" style={{ fontFamily: 'Montserrat, Poppins, sans-serif', fontWeight: 600 }}>Certifications & Awards</h3>
+        <motion.h3
+          className="text-info mb-4"
+          style={{ fontFamily: 'Montserrat, Poppins, sans-serif', fontWeight: 600 }}
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+        >
+          Certifications & Awards
+        </motion.h3>
         <div className="row g-3 justify-content-center">
           {[
             { title: "Programming for Everybody (Python)", org: "Coursera", year: 2025, link: "https://www.coursera.org/account/accomplishments/verify/UF5QZD4NNCFT" },
@@ -146,9 +266,9 @@ export default function Expertise() {
             { title: "Advanced Features of Java 21", org: "LinkedIn Learning", year: 2024, link: "https://www.linkedin.com/learning/certificates/618a76e65489bd02f7c7c801961b119ec1599e482b16d8b23cf0a8b3713e09cc" },
             { title: "React Essential Training", org: "LinkedIn Learning", year: 2023, link: "https://www.linkedin.com/learning/certificates/216495fe98d0d5b21dc38dcfdb7c622e7da840649d1a16a902bd65a82912f7a1" },
           ].map((cert, idx) => (
-            <div className="col-md-4" key={idx}>
+            <div className="col-md-4 section-fade-in" key={idx}>
               <div
-                className="bg-dark rounded-4 shadow-sm p-3 h-100 text-start border border-info cert-card"
+                className="glass-card rounded-4 shadow-sm p-3 h-100 text-start border border-info cert-card"
                 style={{ position: "relative", transition: "transform 0.2s, box-shadow 0.2s" }}
               >
                 <div className="d-flex align-items-center mb-2">

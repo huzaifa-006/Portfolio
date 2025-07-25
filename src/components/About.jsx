@@ -1,10 +1,19 @@
 import { FaGithub, FaDownload, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <section id="about" className="py-5 text-light">
       <div className="container text-center">
-        <h2 className="text-info mb-5">About Me</h2>
+        <motion.h2
+          className="text-info mb-5"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+        >
+          About Me
+        </motion.h2>
 
         {/* About Me Description */}
         <div className="row justify-content-center">
@@ -23,9 +32,9 @@ export default function About() {
         {/* Quick Links + Experience Cards */}
         <div className="row justify-content-center mt-5 g-4">
           {/* Quick Links Card */}
-          <div className="col-md-5">
+          <div className="col-md-5 section-fade-in">
             <div
-              className="p-4 rounded-4 shadow-lg text-center h-100 d-flex flex-column justify-content-between"
+              className="glass-card p-4 rounded-4 shadow-lg text-center h-100 d-flex flex-column justify-content-between"
               style={{
                 backdropFilter: "blur(12px)",
                 background: "rgba(255, 255, 255, 0.05)",
@@ -73,9 +82,9 @@ export default function About() {
           </div>
 
           {/* Experience Card */}
-          <div className="col-md-5">
+          <div className="col-md-5 section-fade-in">
             <div
-              className="p-4 rounded-4 shadow-lg text-center h-100"
+              className="glass-card p-4 rounded-4 shadow-lg text-center h-100"
               style={{
                 backdropFilter: "blur(8px)",
                 background: "rgba(0, 0, 0, 0.3)",

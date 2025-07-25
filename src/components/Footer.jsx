@@ -3,10 +3,15 @@ import { Link as ScrollLink } from 'react-scroll';
 
 export default function Footer() {
   return (
-    <footer className="text-light bg-dark border-top mt-0 py-3">
+    <footer
+      className="text-light glass-card border-top mt-0 py-3"
+      style={{ borderTop: '1.5px solid rgba(255,255,255,0.13)' }}
+    >
       <div className="container text-center">
         <h4 className="fw-bold text-info mb-2">Muhammad Huzaifa Shafiq</h4>
-        <p className="text-muted mb-3">Computer Scientist | Web & Software Developer</p>
+        <p className="mb-3" style={{ color: '#e6edf3', textShadow: '0 1px 8px rgba(0,0,0,0.13)' }}>
+          Computer Scientist | Web & Software Developer
+        </p>
 
         <div className="d-flex justify-content-center gap-4 flex-wrap mb-3">
           <ScrollLink to="home" smooth={true} duration={200} className="footer-link">Home</ScrollLink>
@@ -28,7 +33,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="text-muted mt-3 mb-0">
+        <p className="mt-3 mb-0" style={{ color: '#bfc9d1' }}>
           &copy; {new Date().getFullYear()} Muhammad Huzaifa Shafiq. All rights reserved.
         </p>
       </div>

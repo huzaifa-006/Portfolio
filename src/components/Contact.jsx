@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaLocationArrow } from "react-icons/fa";
-import { FaGithub, FaTwitter, FaTelegram, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaTelegram } from "react-icons/fa";
 import emailjs from "@emailjs/browser"
 export default function Contact() {
   const formRef = useRef();
@@ -31,11 +32,19 @@ export default function Contact() {
   return (
     <section id="contact" className="pt-5 text-light">
       <div className="container">
-        <h2 className="text-center mb-5 text-info">Contact Me</h2>
+        <motion.h2
+          className="text-center mb-5 text-info"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+        >
+          Contact Me
+        </motion.h2>
         <div className="row g-4 align-items-start justify-content-center">
           {/* Left - Contact Form */}
           <div className="col-md-6">
-            <div className="bg-dark p-4 rounded-4 shadow-lg">
+            <div className="glass-card p-4 rounded-4 shadow-lg">
               <form ref={formRef} onSubmit={sendEmail}>
                 <div className="mb-3">
                   <label className="form-label">Name</label>

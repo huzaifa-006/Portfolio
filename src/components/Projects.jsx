@@ -1,4 +1,5 @@
 import { FaReact, FaJava, FaPython, FaDatabase } from "react-icons/fa";
+import { motion } from "framer-motion";
 import {
   SiDjango,
   SiMysql,
@@ -11,14 +12,22 @@ export default function Projects() {
   return (
     <section id="projects" className="py-5 text-light">
       <div className="container text-center" style={{ maxWidth: "1100px" }}>
-        <h2 className="mb-4 text-info fw-bold">My Projects</h2>
+        <motion.h2
+          className="mb-4 text-info fw-bold"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+        >
+          My Projects
+        </motion.h2>
 
         <div className="row g-4 justify-content-center">
           {/* Your Project Cards Here */}
 
           {/* Project 1: Hate Speech */}
-          <div className="col-md-6">
-            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
                 <h5 className="card-title text-info">
                   Hate Speech Recognition
@@ -46,8 +55,8 @@ export default function Projects() {
           </div>
 
           {/* Project 2: Medical Prescription System */}
-          <div className="col-md-6">
-            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
                 <h5 className="card-title text-info">Medical Prescription System</h5>
                 <p className="card-text">
@@ -71,8 +80,8 @@ export default function Projects() {
           </div>
 
           {/* Project 2: E-Commerce */}
-          <div className="col-md-6">
-            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
                 <h5 className="card-title text-info">E-commerce Website</h5>
                 <p className="card-text">
@@ -99,8 +108,8 @@ export default function Projects() {
           </div>
 
           {/* Project 3: University Management */}
-          <div className="col-md-6">
-            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
                 <h5 className="card-title text-info">
                   University Management System
@@ -126,8 +135,8 @@ export default function Projects() {
           </div>
 
           {/* Project 4: Vehicle Registration System */}
-          <div className="col-md-6">
-            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
                 <h5 className="card-title text-info">
                   Vehicle Registration System
@@ -153,8 +162,8 @@ export default function Projects() {
           </div>
 
           {/* Project 5: Responsive Portfolio */}
-          <div className="col-md-6">
-            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
                 <h5 className="card-title text-info">Responsive Portfolio</h5>
                 <p className="card-text">

@@ -18,8 +18,14 @@ export default function Hero() {
         >
           {/* Name pops down first */}
           <motion.h1
-            className="display-3 fw-bold"
-            style={{ color: "#00ffaa", fontFamily: "times-new-roman" }}
+            className="fw-bold"
+            style={{
+              color: "#00ffaa",
+              fontFamily: "times-new-roman",
+              fontSize: 'clamp(2.2rem, 7vw, 3.5rem)',
+              lineHeight: 1.1,
+              marginBottom: 0,
+            }}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -45,8 +51,12 @@ export default function Hero() {
               wrapper="span"
               cursor={true}
               repeat={Infinity}
-              className="fs-2 d-block text-light mt-3"
-              style={{ fontWeight: "bold" }}
+              className="d-block text-light mt-3"
+              style={{
+                fontWeight: "bold",
+                fontSize: 'clamp(1.1rem, 4vw, 2rem)',
+                letterSpacing: 0.5,
+              }}
             />
           </motion.div>
 
