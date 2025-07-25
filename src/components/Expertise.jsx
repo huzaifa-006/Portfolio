@@ -48,6 +48,19 @@ const skillGroups = [
   },
 ];
 
+// Certificate logos (dummy URLs or local assets)
+const certLogos = {
+  Coursera: "https://upload.wikimedia.org/wikipedia/commons/7/7e/Coursera_logo.svg",
+  IBM: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+  "LinkedIn Learning": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+};
+
+// Coursera logo URL
+const courseraLogo = "https://upload.wikimedia.org/wikipedia/commons/7/7e/Coursera_logo.svg";
+// Local SVG data URI fallback for Coursera
+const courseraLogoDataUri =
+  "data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='18' fill='%23006EFF'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' fill='white' font-size='14' font-family='Arial' dy='.3em'%3EC%3C/text%3E%3C/svg%3E";
+
 export default function Expertise() {
   const [hovered, setHovered] = useState(null);
   const [refreshKey, setRefreshKey] = useState({});
@@ -121,6 +134,64 @@ export default function Expertise() {
           ))}
         </div>
       </div>
+      {/* Certifications & Awards Section */}
+      <div className="container mt-5">
+        <h3 className="text-info mb-4" style={{ fontFamily: 'Montserrat, Poppins, sans-serif', fontWeight: 600 }}>Certifications & Awards</h3>
+        <div className="row g-3 justify-content-center">
+          {[
+            { title: "Programming for Everybody (Python)", org: "Coursera", year: 2025, link: "https://www.coursera.org/account/accomplishments/verify/UF5QZD4NNCFT" },
+            { title: "Python data Structures", org: "Coursera", year: 2025, link: "https://www.coursera.org/account/accomplishments/verify/K59SRACBNL42" },
+            { title: "Introduction to Web Development with HTML, CSS, JavaScript", org: "IBM", year: 2025, link: "https://www.coursera.org/account/accomplishments/verify/KRQ7QTRZ4XIZ" },
+            { title: "React.js Essential Training", org: "LinkedIn Learning", year: 2024, link: "https://www.linkedin.com/learning/certificates/6fdcb5df18e3d536a2c5c78558b06a12850bff5cee99e44c28906687f44790b4" },
+            { title: "Advanced Features of Java 21", org: "LinkedIn Learning", year: 2024, link: "https://www.linkedin.com/learning/certificates/618a76e65489bd02f7c7c801961b119ec1599e482b16d8b23cf0a8b3713e09cc" },
+            { title: "React Essential Training", org: "LinkedIn Learning", year: 2023, link: "https://www.linkedin.com/learning/certificates/216495fe98d0d5b21dc38dcfdb7c622e7da840649d1a16a902bd65a82912f7a1" },
+          ].map((cert, idx) => (
+            <div className="col-md-4" key={idx}>
+              <div
+                className="bg-dark rounded-4 shadow-sm p-3 h-100 text-start border border-info cert-card"
+                style={{ position: "relative", transition: "transform 0.2s, box-shadow 0.2s" }}
+              >
+                <div className="d-flex align-items-center mb-2">
+                  <img
+                    src={
+                      idx === 0 || idx === 1
+                        ? courseraLogo
+                        : certLogos[cert.org] || "https://via.placeholder.com/36x36?text=Logo"
+                    }
+                    onError={e => {
+                      if (idx === 0 || idx === 1) e.target.src = courseraLogoDataUri;
+                    }}
+                    alt={cert.org + " logo"}
+                    className="cert-logo"
+                  />
+                  <div>
+                    <div className="fw-bold text-info" style={{ fontSize: "1.1rem" }}>{cert.title}</div>
+                    <div className="small text-light">{cert.org} &bull; {cert.year}</div>
+                  </div>
+                </div>
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-info btn-sm mt-2"
+                  style={{ position: "absolute", right: 16, bottom: 16 }}
+                >
+                  View Certificate
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Add hover effect for .cert-card */}
+      {/* You can move this to index.css if you prefer */}
+      <style>{`
+      .cert-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px 0 rgba(0,255,231,0.15), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+        border-color: #00ffe7;
+      }
+      `}</style>
     </section>
   );
 }

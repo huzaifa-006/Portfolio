@@ -5,10 +5,10 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="d-flex justify-content-center align-items-center text-center text-light"
-      style={{ minHeight: "100vh" }}
+      className="d-flex justify-content-center text-center text-light"
+      style={{ minHeight: "100vh", marginTop: "-100px" }}
     >
-      <div style={{ width: "70%", margin: "0 auto" }}>
+      <div style={{ width: "70%", margin: "0 auto", marginTop: 0 }}>
         {/* Main motion wrapper (only background fade in) */}
         <motion.div
           className="py-5"
@@ -31,7 +31,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
+            transition={{ delay: 1, duration: 1.2, ease: "easeInOut" }}
           >
             <TypeAnimation
               sequence={[
@@ -45,7 +45,7 @@ export default function Hero() {
               wrapper="span"
               cursor={true}
               repeat={Infinity}
-              className="fs-4 d-block text-light mt-3"
+              className="fs-2 d-block text-light mt-3"
               style={{ fontWeight: "bold" }}
             />
           </motion.div>

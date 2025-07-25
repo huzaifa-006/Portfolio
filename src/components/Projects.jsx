@@ -45,6 +45,31 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Project 2: Medical Prescription System */}
+          <div className="col-md-6">
+            <div className="card bg-dark text-light border-info h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-info">Medical Prescription System</h5>
+                <p className="card-text">
+                  A web-based platform for doctors to create, manage, and share digital prescriptions securely with patients and pharmacies. Features include patient records, medicine database, and printable prescriptions.
+                </p>
+                <div className="mb-3">
+                  <FaReact className="me-2" />
+                  <SiDjango className="me-2" />
+                  <SiMysql className="me-2" />
+                </div>
+                <a
+                  href="https://github.com/huzaifa-006/Medical-Prescription-App.git"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline-info"
+                >
+                  View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
           {/* Project 2: E-Commerce */}
           <div className="col-md-6">
             <div className="card bg-dark text-light border-info h-100 shadow-sm">

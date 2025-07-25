@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaLocationArrow } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import emailjs from "@emailjs/browser"
 export default function Contact() {
   const formRef = useRef();
@@ -28,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-5 text-light">
+    <section id="contact" className="pt-5 text-light">
       <div className="container">
         <h2 className="text-center mb-5 text-info">Contact Me</h2>
         <div className="row g-4 align-items-start justify-content-center">
@@ -122,6 +123,19 @@ export default function Contact() {
         LinkedIn Profile
       </a>
     </div>
+    {/* GitHub */}
+    <div className="mb-3 d-flex flex-column flex-md-row align-items-start align-items-md-center">
+      <FaGithub className="me-md-3 mb-2 mb-md-0 text-info fs-4" />
+      <a
+        href="https://github.com/huzaifa-006"
+        className="fs-6 text-decoration-none text-light"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub Profile
+      </a>
+    </div>
+    
   </div>
 
   {/* Location Section */}
