@@ -557,3 +557,43 @@ footer.glass-card {
     filter: blur(12px) !important;
   }
 }
+
+.lottie-top-left-bg {
+  position: fixed;
+  top: 150px;
+  left: -40px;
+  width: 520px;
+  max-width: 80vw;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .lottie-top-left-bg {
+    width: 380px;
+    top: 100px;
+    left: -30px;
+  }
+}
+@media (max-width: 992px) {
+  .lottie-top-left-bg {
+    width: 260px;
+    top: 60px;
+    left: -18px;
+  }
+}
+@media (max-width: 768px) {
+  .lottie-top-left-bg {
+    width: 180px;
+    top: 30px;
+    left: -10px;
+  }
+}
+@media (max-width: 576px) {
+  .lottie-top-left-bg {
+    width: 120px;
+    top: 10px;
+    left: -6px;
+  }
+}

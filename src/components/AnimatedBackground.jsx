@@ -96,16 +96,7 @@ export default function AnimatedBackground() {
         <Lottie animationData={personComputerLottie} loop={true} autoPlay={true} />
       </div>
       {/* Animated Lottie Person at Laptop (Top Left) */}
-      <div style={{
-        position: 'fixed',
-        top: '150px',
-        left: '-40px',
-        width: '520px',
-        maxWidth: '80vw',
-        zIndex: 0,
-        opacity: 0.7,
-        pointerEvents: 'none',
-      }}>
+      <div className="lottie-top-left-bg">
         <Lottie animationData={personLaptopTopLeft} loop={true} autoPlay={true} />
       </div>
     <Particles
