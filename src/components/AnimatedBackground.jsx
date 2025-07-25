@@ -2,6 +2,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import Lottie from "lottie-react";
 import personComputerLottie from "../assets/person-computer-lottie.json";
+import personLaptopTopLeft from "../assets/coding in office.json";
 
 export default function AnimatedBackground() {
   const init = async (engine) => await loadFull(engine);
@@ -93,6 +94,19 @@ export default function AnimatedBackground() {
         pointerEvents: 'none',
       }}>
         <Lottie animationData={personComputerLottie} loop={true} autoPlay={true} />
+      </div>
+      {/* Animated Lottie Person at Laptop (Top Left) */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '220px',
+        maxWidth: '40vw',
+        zIndex: 0,
+        opacity: 0.7,
+        pointerEvents: 'none',
+      }}>
+        <Lottie animationData={personLaptopTopLeft} loop={true} autoPlay={true} />
       </div>
     <Particles
       id="tsparticles"
