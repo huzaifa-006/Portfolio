@@ -98,10 +98,10 @@ export default function AnimatedBackground() {
       {/* Animated Lottie Person at Laptop (Top Left) */}
       <div style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '220px',
-        maxWidth: '40vw',
+        top: '150px',
+        left: '-40px',
+        width: '520px',
+        maxWidth: '80vw',
         zIndex: 0,
         opacity: 0.7,
         pointerEvents: 'none',
