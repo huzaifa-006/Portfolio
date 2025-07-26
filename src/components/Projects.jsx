@@ -58,9 +58,14 @@ export default function Projects() {
           <div className="col-md-6 section-fade-in">
             <div className="glass-card card text-light border-info h-100 shadow-sm">
               <div className="card-body">
-                <h5 className="card-title text-info">Medical Prescription System</h5>
+                <h5 className="card-title text-info">
+                  Medical Prescription System
+                </h5>
                 <p className="card-text">
-                  A web-based platform for doctors to create, manage, and share digital prescriptions securely with patients and pharmacies. Features include patient records, medicine database, and printable prescriptions.
+                  A web-based platform for doctors to create, manage, and share
+                  digital prescriptions securely with patients and pharmacies.
+                  Features include patient records, medicine database, and
+                  printable prescriptions.
                 </p>
                 <div className="mb-3">
                   <FaReact className="me-2" />
@@ -177,6 +182,34 @@ export default function Projects() {
                 </div>
                 <a
                   href="https://github.com/huzaifa-006/Portfolio"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline-info"
+                >
+                  View Code
+                </a>
+              </div>
+            </div>
+          </div>
+          {/* Project 6: Number Guessing Game */}
+          <div className="col-md-6 section-fade-in">
+            <div className="glass-card card text-light border-info h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title text-info">
+                  Number Guessing Game (Console App)
+                </h5>
+                <p className="card-text">
+                  This is a beginner-friendly Python console application where
+                  the user tries to guess a randomly generated number between 1
+                  and 100. The program provides feedback on each guess — whether
+                  it's too high or too low — and counts the number of attempts
+                  taken to guess the correct number.
+                </p>
+                <div className="mb-3">
+                  <FaPython className="me-2" />
+                </div>
+                <a
+                  href="https://github.com/huzaifa-006/Number-Guessing-Game.git"
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-outline-info"
