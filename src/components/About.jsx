@@ -19,12 +19,15 @@ export default function About() {
         <div className="row justify-content-center">
           <div className="col-md-10">
             <p className="fs-5">
-              I'm a Computer Science graduate with a strong passion for building
-              responsive web applications and intelligent software systems. I’ve
-              worked on a variety of impactful projects including a Hate Speech
-              Recognition System, E-Commerce Website, and University Management
-              System. My expertise lies in React.js, Django, Flask, Java, and
-              more.
+              I'm Muhammad Huzaifa Shafiq, a dedicated and passionate Computer
+              Science graduate.
+              I specialize in full-stack web development with a strong focus on
+              building responsive, user-friendly, and scalable applications.
+              Over the past few years, I’ve worked on a variety of real-world
+              projects — from creating an AI-powered Hate Speech Recognition
+              System to developing dynamic websites and Android applications. I
+              also have a strong interest in software development and have built
+              desktop applications focused on efficiency and usability.
             </p>
           </div>
         </div>
