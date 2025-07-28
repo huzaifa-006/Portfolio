@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@vercel/speed-insights": "^1.2.0",
     "bootstrap": "^5.3.2",
     "framer-motion": "^10.18.0",
     "lottie-react": "^2.4.1",

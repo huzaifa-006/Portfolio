@@ -8,6 +8,7 @@ import Expertise from './components/Expertise';
 import './index.css';
 import Footer from './components/Footer';
 import { useEffect, useState, useRef } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -175,6 +176,7 @@ export default function App() {
         <section id="navbar"><Navbar /></section>
         <Footer />      
         <ScrollToTopButton />
+        <SpeedInsights/>
       </div>
     </>
   );
