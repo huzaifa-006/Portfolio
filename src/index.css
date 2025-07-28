@@ -247,12 +247,12 @@ a {
 
 @media (max-width: 768px) {
   section {
-    padding: 40px 4px 10px 4px;
+    padding: 40px 8px 10px 8px;
   }
   .container {
     max-width: 100vw;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   .row {
     flex-direction: column !important;
@@ -278,11 +278,11 @@ a {
 
 @media (max-width: 576px) {
   section {
-    padding: 24px 2px 6px 2px;
+    padding: 24px 6px 6px 6px;
   }
   .container {
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
   .display-3 {
     font-size: 1.1rem;
@@ -556,6 +556,59 @@ footer.glass-card {
     opacity: 0.07 !important;
     filter: blur(12px) !important;
   }
+  
+  /* Improve mobile spacing for hero section */
+  section#hero {
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  /* Better mobile text sizing */
+  .display-3 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Improve mobile container spacing */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Further mobile optimizations */
+  section#hero {
+    padding-top: 40px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  .display-3 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Better mobile margins */
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small device optimizations */
+  section#hero {
+    padding-top: 30px !important;
+    padding-bottom: 20px !important;
+  }
+  
+  .display-3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
 }
 
 .lottie-top-left-bg {
@@ -585,15 +638,47 @@ footer.glass-card {
 }
 @media (max-width: 768px) {
   .lottie-top-left-bg {
-    width: 180px;
-    top: 30px;
-    left: -10px;
+    width: 200px;
+    top: 40px;
+    left: -15px;
+    opacity: 0.5;
   }
 }
 @media (max-width: 576px) {
   .lottie-top-left-bg {
-    width: 120px;
-    top: 10px;
-    left: -6px;
+    width: 140px;
+    top: 20px;
+    left: -8px;
+    opacity: 0.4;
+  }
+}
+@media (max-width: 480px) {
+  .lottie-top-left-bg {
+    width: 100px;
+    top: 15px;
+    left: -5px;
+    opacity: 0.3;
+  }
+}
+
+/* Responsive styles for the right-side Lottie animation */
+@media (max-width: 768px) {
+  div[style*="position: 'fixed'"][style*="bottom: 0"][style*="right: 0"] {
+    width: 200px !important;
+    opacity: 0.5 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  div[style*="position: 'fixed'"][style*="bottom: 0"][style*="right: 0"] {
+    width: 150px !important;
+    opacity: 0.4 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  div[style*="position: 'fixed'"][style*="bottom: 0"][style*="right: 0"] {
+    width: 120px !important;
+    opacity: 0.3 !important;
   }
 }

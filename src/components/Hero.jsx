@@ -8,7 +8,7 @@ export default function Hero() {
       className="d-flex justify-content-center text-center text-light"
       style={{ minHeight: "100vh", marginTop: "-100px" }}
     >
-      <div style={{ width: "70%", margin: "0 auto", marginTop: 0 }}>
+      <div style={{ width: "90%", maxWidth: "800px", margin: "0 auto", marginTop: 0 }}>
         {/* Main motion wrapper (only background fade in) */}
         <motion.div
           className="py-5"
@@ -22,7 +22,7 @@ export default function Hero() {
             style={{
               color: "#00ffaa",
               fontFamily: "times-new-roman",
-              fontSize: 'clamp(2.2rem, 7vw, 3.5rem)',
+              fontSize: 'clamp(1.8rem, 6vw, 3.5rem)',
               lineHeight: 1.1,
               marginBottom: 0,
             }}
@@ -54,7 +54,7 @@ export default function Hero() {
               className="d-block text-light mt-3"
               style={{
                 fontWeight: "bold",
-                fontSize: 'clamp(1.1rem, 4vw, 2rem)',
+                fontSize: 'clamp(1rem, 3.5vw, 2rem)',
                 letterSpacing: 0.5,
               }}
             />
